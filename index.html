@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본사 매장 매니저 관리 감독 체크리스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #1c5980;
+        }
+        .checkbox-group, .radio-group {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .checkbox-group label, .radio-group label {
+            margin-left: 10px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<h1>본사 매장 매니저 관리 감독 체크리스트</h1>
+
+<form>
+    <!-- 기본 정보 섹션 -->
+    <h2>섹션 1: 기본 정보</h2>
+    <label for="store">매장 이름:</label>
+    <select id="store" name="store">
+        <option value="storeA">매장 A</option>
+        <option value="storeB">매장 B</option>
+        <option value="storeC">매장 C</option>
+        <option value="other">기타</option>
+    </select>
+
+    <label for="manager">매니저 이름:</label>
+    <input type="text" id="manager" name="manager">
+
+    <label for="date">점검 일자:</label>
+    <input type="date" id="date" name="date">
+
+    <!-- 일일 업무 계획 및 실행 점검 섹션 -->
+    <h2>섹션 2: 업무 계획 및 실행</h2>
+    <label>매일 업무 계획을 수립하고, 본사에 보고했습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="plan_yes" name="plan" value="yes">
+        <label for="plan_yes">예</label><br>
+        <input type="radio" id="plan_no" name="plan" value="no">
+        <label for="plan_no">아니요</label>
+    </div>
+
+    <label>일일 업무 실행 결과를 본사에 보고했습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="execution_yes" name="execution" value="yes">
+        <label for="execution_yes">예</label><br>
+        <input type="radio" id="execution_no" name="execution" value="no">
+        <label for="execution_no">아니요</label>
+    </div>
+
+    <!-- 근무 시간 및 업무 태도 점검 섹션 -->
+    <h2>섹션 3: 근무 시간 및 태도</h2>
+    <label>출근 및 퇴근 시간을 철저히 준수하고 있습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="timeliness_yes" name="timeliness" value="yes">
+        <label for="timeliness_yes">예</label><br>
+        <input type="radio" id="timeliness_no" name="timeliness" value="no">
+        <label for="timeliness_no">아니요</label>
+    </div>
+
+    <label>근무 시간 동안 집중하여 업무를 수행하였습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="focus_yes" name="focus" value="yes">
+        <label for="focus_yes">예</label><br>
+        <input type="radio" id="focus_no" name="focus" value="no">
+        <label for="focus_no">아니요</label>
+    </div>
+
+    <label>업무 중 자리 이탈이 없었습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="absence_yes" name="absence" value="yes">
+        <label for="absence_yes">예</label><br>
+        <input type="radio" id="absence_no" name="absence" value="no">
+        <label for="absence_no">아니요</label>
+    </div>
+
+    <!-- 매장 운영 및 청결 관리 섹션 -->
+    <h2>섹션 4: 매장 운영 및 청결 관리</h2>
+    <label for="cleanliness">매장 청결 상태를 점검하였습니까? 문제점이 있으면 상세히 기술해 주십시오.</label>
+    <textarea id="cleanliness" name="cleanliness" rows="4" placeholder="매장 청결 상태 및 문제점을 기술해 주세요"></textarea>
+
+    <label>정기적인 청소 및 위생 관리가 제대로 이루어졌습니까?</label>
+    <div class="checkbox-group">
+        <input type="checkbox" id="cleaning_daily" name="cleaning[]" value="daily">
+        <label for="cleaning_daily">일일 청소</label><br>
+        <input type="checkbox" id="cleaning_weekly" name="cleaning[]" value="weekly">
+        <label for="cleaning_weekly">주간 청소</label><br>
+        <input type="checkbox" id="cleaning_monthly" name="cleaning[]" value="monthly">
+        <label for="cleaning_monthly">월간 청소</label><br>
+        <input type="checkbox" id="cleaning_none" name="cleaning[]" value="none">
+        <label for="cleaning_none">해당 없음</label>
+    </div>
+
+    <!-- 매출 및 재무 관리 점검 섹션 -->
+    <h2>섹션 5: 매출 및 재무 관리</h2>
+    <label>일일 매출을 정확히 보고하고 결산하였습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="sales_yes" name="sales" value="yes">
+        <label for="sales_yes">예</label><br>
+        <input type="radio" id="sales_no" name="sales" value="no">
+        <label for="sales_no">아니요</label>
+    </div>
+
+    <label for="expenses">현금 흐름과 비용 지출을 철저히 관리하였습니까? 상세한 내용을 기술해 주세요.</label>
+    <textarea id="expenses" name="expenses" rows="4" placeholder="현금 흐름 및 비용 지출 관리 사항을 기술해 주세요"></textarea>
+
+    <!-- 고객 응대 및 서비스 품질 점검 섹션 -->
+    <h2>섹션 6: 고객 응대 및 서비스 품질</h2>
+    <label>고객 응대 매뉴얼을 정확히 준수하였습니까?</label>
+    <div class="radio-group">
+        <input type="radio" id="manual_yes" name="manual" value="yes">
+        <label for="manual_yes">예</label><br>
+        <input type="radio" id="manual_no" name="manual" value="no">
+        <label for="manual_no">아니요</label>
+    </div>
+
+    <label for="feedback">고객 불만 및 문의를 적절히 처리하였습니까? 처리한 사례를 기술해 주세요.</label>
+    <textarea id="feedback" name="feedback" rows="4" placeholder="고객 불만 및 문의 처리 사례를 기술해 주세요"></textarea>
+
+    <!-- 본사 지침 및 정책 준수 점검 섹션 -->
+    <h2>섹션 7: 본사 지침 및 정책 준수</h2>
+    <label>본사 지침과 정책
